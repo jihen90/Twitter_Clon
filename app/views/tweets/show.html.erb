@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<p class="pb-3"></p>
+<div class="card">
+  <h5 class="card-header">@<%= @tweet.user.name %></h5>
+  <div class="card-body">
+    <p class="card-text py-3"><%= @tweet.content %></p>
+    <hr>
+    <h5 class="card-text"><%= @tweet.likes_count %> <%= (@tweet.likes_count) == 1 ? 'Like' : 'Likes'%></h5>
+    <div class='card-body'>
+      <% @tweet.likes.each do |like| %>
+      <%= image_tag like.user.profilephoto, class:'img-thumbnail rounded-circle'%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<p class="pt-3"><%= link_to 'Back', tweets_path %></p>

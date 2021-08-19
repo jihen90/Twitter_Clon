@@ -1,0 +1,21 @@
+<%= form_with(model: tweet, local: true) do |form| %>
+  <% if tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tweet.errors.count, "error") %> Content required</h2>
+
+      <ul>
+      <% tweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group w-50">
+    <%= form.text_area :content, class:'form-control', placeholder: "What's happening?" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Tweet", class:'btn btn-outline-primary btn-md' %>
+  </div>
+<% end %>
