@@ -37,6 +37,8 @@ class TweetsController < ApplicationController
 
   def retweet
     @tweet = Tweet.find(params[:id])
+    rt = Tweet.create(main_id: @tweet.id, content: "RT: @#{@tweet.user.name}: '#{@tweet.content}' ", user: current_user)
+    redirect_to root_path
   end
 
   # PATCH/PUT /tweets/1 or /tweets/1.json

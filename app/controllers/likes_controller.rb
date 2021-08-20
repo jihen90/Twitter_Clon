@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     before_action :find_like, only: [:destroy]
 
     def create
-        if already_liked?
+        if liked?
           flash[:notice] = "Not permit"
         else
           @tweet.likes.create(user_id: current_user.id)
@@ -12,7 +12,7 @@ class LikesController < ApplicationController
     end
 
     def destroy
-        if !(already_liked?)
+        if !(liked?)
           flash[:notice] = "Not permit"
         else
           @like.destroy
@@ -22,7 +22,7 @@ class LikesController < ApplicationController
 
     private
 
-    def already_liked?
+    def liked?
         Like.where(user_id: current_user.id, tweet_id:
         params[:tweet_id]).exists?
     end

@@ -1,3 +1,0 @@
-<% @retweet = Tweet.create(main_id: @tweet.id, content: "RT: @#{@tweet.user.name}: '#{@tweet.content}' ", user_id: current_user.id) %>
-<h2 class= 'py-5'> Retweeted successfully</h2>
-<p><%= link_to 'Back', root_path  %></p>
