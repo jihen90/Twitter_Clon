@@ -48,7 +48,7 @@ https://nameless-crag-95048.herokuapp.com/
 * Esta app utiliza las siguientes versiones de Ruby on Rails:
 
   * Ruby version 2.7.3
-  * Rails version 5.2.3
+  * Rails version 5.2.6
 
 
 * El comando para instalar bundler: 
