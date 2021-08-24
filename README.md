@@ -12,7 +12,7 @@ https://nameless-crag-95048.herokuapp.com/
 1. Por consola ingresar a la carpeta respectiva del proyecto
 
 
-2. Gestion de versiones con rvm
+2. Gestión de versiones con rvm
 
 
 * En consola ejecutar el comando:
