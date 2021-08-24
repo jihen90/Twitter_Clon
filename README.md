@@ -43,6 +43,10 @@ https://nameless-crag-95048.herokuapp.com/
 * Utilizar la gema que creamos en el proyecto con el siguiente comando:
 
       rvm gemset use <nombre>
+      
+* Una vez seleccionada nuestra gema, instalamos la versión de Rails a utilizar (Utilizaremos como ejemplo la versión 5.2.6)
+
+      gem install rails --version 5.2.6
 
 
 * Esta app utiliza las siguientes versiones de Ruby on Rails:
