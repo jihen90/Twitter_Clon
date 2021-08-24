@@ -93,7 +93,7 @@ https://nameless-crag-95048.herokuapp.com/
   
 * Posterior a ello, para migrar los requerimientos y lineamientos de nuestra base de datos, ejecutamos el siguiente comando: 
 
-      rails run db:migrate
+      heroku run rails db:migrate
   
   
 * Ahora podemos loguearnos en la página de heroku e ingresar a nuestro proyecto
