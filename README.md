@@ -1,10 +1,10 @@
 # README
 
-##Link a producción: 
+###Link a producción: 
 
 https://nameless-crag-95048.herokuapp.com/
 
-## Después del hacer el git clone a este repositorio:
+### Después del hacer el git clone a este repositorio:
 
 1. Por consola ingresar a la carpeta respectiva del proyecto
 
