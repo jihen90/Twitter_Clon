@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
     protected
 
+
     def banned?
         if current_user.present? && current_user.banned?
             sign_out current_user
