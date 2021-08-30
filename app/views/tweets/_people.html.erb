@@ -1,0 +1,10 @@
+<% @users.each do |user| %>
+    <div class="card gedf-card">
+        <div class="card-body">
+            <h5 class="card-title"><%= link_to "@#{user.name}", user_path(user), style:'color:deepskyblue' %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">I'm <%= user.name %></h6>
+            <p class="card-text">  
+            </p>
+        </div>
+    </div>
+<% end %>
