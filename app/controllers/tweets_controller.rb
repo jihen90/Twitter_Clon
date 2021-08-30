@@ -1,10 +1,15 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
+  before_action :set_tweet, only: %i[ show edit update destroy]
 
   # GET /tweets or /tweets.json
   def index
+    if params[:q]
+      @tweets = Tweet.where('content LIKE ?', "%#{params[:q]}%").order(id: :desc).page(params[:page])
+    else
+      @tweets = Tweet.eager_load(:likes).order(id: :desc).page(params[:page])
+    end
     @tweet = Tweet.new
-    @tweets = Tweet.eager_load(:likes).order(id: :desc).page(params[:page])
+    @users = User.where('id IS NOT ?', current_user.id) if user_signed_in?
   end
 
   # GET /tweets/1 or /tweets/1.json
@@ -29,8 +34,7 @@ class TweetsController < ApplicationController
       if @tweet.save
         format.html { redirect_to root_path, notice: "Tweet was successfully created." }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+        format.html { redirect_to root_path, notice: "Content can't be blank" }
       end
     end
   end
@@ -58,7 +62,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet.destroy
     respond_to do |format|
-      format.html { redirect_to tweets_url, notice: "Tweet was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Tweet was successfully destroyed." }
       format.json { head :no_content }
     end
   end

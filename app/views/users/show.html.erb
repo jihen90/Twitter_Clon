@@ -1,0 +1,36 @@
+
+<% if @user == current_user %>
+    
+    <div class="py-5">
+        <h1 class=>Profile</h1>
+        <ul class="py-3">
+            <li>Name: <%= current_user.name %></li> 
+            <li>Email:  <%= current_user.email %></li>
+            <li>Followers: <%= current_user.followers.count %></li>
+            <li>Following: <%= current_user.followees.count %></li>
+            <li>Tweets: <%= current_user.tweets.count %> </li>
+        </ul>
+    </div>
+    
+<% else %>
+
+    <div class="pt-5">
+        <h1 class=><%= "@#{@user.name}" %></h1>
+        <ul class="py-3">
+        <li>Name: <%= @user.name %></li> 
+        <li>Email:  <%= @user.email %></li>
+        <li>Followees: <%= @user.followees.count %> </li>
+        <li>Followers: <%= @user.followers.count %></li>
+        <li>Tweets: <%= @user.tweets.count %></li>
+        </ul>
+    </div>
+
+    <div id="all-links" class="actions">
+        <% if current_user.followees.include?(@user) %>
+            <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST", class:'btn btn-outline-danger' %></h5>
+        <% else %>
+            <h5><%= button_to "Follow", follow_user_path, method: "POST", class:'btn btn-outline-info'  %></h5>
+        <% end%>
+    </div>
+
+<% end %>

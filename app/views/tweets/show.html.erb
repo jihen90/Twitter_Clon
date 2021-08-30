@@ -8,7 +8,7 @@
     <h5 class="card-text"><%= @tweet.likes_count %> <%= (@tweet.likes_count) == 1 ? 'Like' : 'Likes'%></h5>
     <div class='card-body'>
       <% @tweet.likes.each do |like| %>
-      <%= image_tag like.user.profilephoto, class:'img-thumbnail rounded-circle'%>
+      <%= image_tag like.user.profilephoto, class:'showphoto img-thumbnail rounded-circle'%>
       <% end %>
     </div>
   </div>

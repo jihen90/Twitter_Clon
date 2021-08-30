@@ -2,3 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+
+body {
+    background-color: #eeeeee;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+
+.photo {
+    height: 5rem;
+    width:5rem;
+    object-fit:cover;
+    }
+
+.userphoto {
+    height: 8rem;
+    width:8rem;
+    object-fit:cover;
+    }
+
+.showphoto {
+    height: 3rem;
+    width:3rem;
+    object-fit:cover;
+    }
