@@ -7,13 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.delete_all
+AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
 
 frank = User.create(name: 'frank', profilephoto: 'https://onebarkplaza.com/wp-content/uploads/2021/02/bernese-mountain-dog-100x100.jpg', email: 'frank@ex.com', password: 'abcd1234' )
 alice = User.create(name: 'alice', profilephoto: 'https://i1.sndcdn.com/artworks-DEZpZ2eWve7nO7Vo-ahcjWQ-large.jpg', email: 'alice@ex.com', password: 'abcd1234' )
 anton = User.create(name: 'anton', profilephoto: 'https://davesgarden.com/static/img/dg_noimage_bird.png', email: 'anton@ex.com', password: 'abcd1234' )
-
-AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
 
 Tweet.delete_all
 
@@ -31,4 +29,3 @@ Tweet.delete_all
     Tweet.create( content: "Workers control the means of production." , user: alice )
     Tweet.create( content: "Can't we all just get along?"             , user: anton )
 end
-
