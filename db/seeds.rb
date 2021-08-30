@@ -13,6 +13,8 @@ frank = User.create(name: 'frank', profilephoto: 'https://onebarkplaza.com/wp-co
 alice = User.create(name: 'alice', profilephoto: 'https://i1.sndcdn.com/artworks-DEZpZ2eWve7nO7Vo-ahcjWQ-large.jpg', email: 'alice@ex.com', password: 'abcd1234' )
 anton = User.create(name: 'anton', profilephoto: 'https://davesgarden.com/static/img/dg_noimage_bird.png', email: 'anton@ex.com', password: 'abcd1234' )
 
+AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
+
 Tweet.delete_all
 
 6.times do |index|
@@ -30,4 +32,3 @@ Tweet.delete_all
     Tweet.create( content: "Can't we all just get along?"             , user: anton )
 end
 
-AdminUser.create!(email: 'admin@example.com', password: '123456', password_confirmation: '123456') if Rails.env.development?
