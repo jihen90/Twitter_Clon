@@ -5,6 +5,13 @@
 
 https://nameless-crag-95048.herokuapp.com/
 
+## Para acceder al Panel de Admin:
+
+https://nameless-crag-95048.herokuapp.com/admin/login
+
+      Email: admin@example.com
+      Password: 123456
+
 
 ### Después del hacer el git clone a este repositorio:
 
