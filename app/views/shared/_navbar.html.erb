@@ -20,12 +20,6 @@
     <ul class="navbar-nav ml-auto">
     <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tool" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5" />
-          </svg> Edit'.html_safe, edit_user_registration_path, class:'nav-link', style:'color:deepskyblue' %>
-        </li>
-        <li class="nav-item active">
           <%= link_to '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00bfff" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
           <circle cx="12" cy="7" r="4" />
