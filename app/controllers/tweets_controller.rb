@@ -9,7 +9,9 @@ class TweetsController < ApplicationController
       @tweets = Tweet.eager_load(:likes).order(id: :desc).page(params[:page])
     end
     @tweet = Tweet.new
-    @users = User.where('id IS NOT ?', current_user.id) if user_signed_in?
+    if user_signed_in? 
+      @users = User.where('id IS NOT ?', current_user.id)
+    end
   end
 
   # GET /tweets/1 or /tweets/1.json
