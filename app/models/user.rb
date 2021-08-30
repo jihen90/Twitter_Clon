@@ -14,10 +14,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  def can_follow?
-    should_follow = self.followees.pluck(:follower_id)
-    !should_follow.include?(self.id)
-  end
+  #def can_follow?
+  #  should_follow = self.followees.pluck(:follower_id)
+  #  !should_follow.include?(self.id)
+  #end
       
 
 end

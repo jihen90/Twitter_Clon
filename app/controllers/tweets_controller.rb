@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
     end
     @tweet = Tweet.new
     if user_signed_in? 
-      @users = User.where('id IS NOT ?', current_user.id)
+      @users = User.all
     end
   end
 

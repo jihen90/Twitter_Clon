@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
-    <% if user.can_follow? %>
+    <% if user != current_user  %>
         <div class="card gedf-card">
             <div class="card-body">
                 <h5 class="card-title"><%= link_to "@#{user.name}", user_path(user), style:'color:deepskyblue' %></h5>
@@ -7,6 +7,6 @@
                 <p class="card-text">  
                 </p>
             </div>
-        </div>    
+        </div>        
     <% end %>
 <% end %>
