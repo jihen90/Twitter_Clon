@@ -35,8 +35,10 @@ class TweetsController < ApplicationController
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to root_path, notice: "Tweet was successfully created." }
+        format.json { render @tweet, status: :created}
       else
         format.html { redirect_to root_path, notice: "Content can't be blank" }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
   end
