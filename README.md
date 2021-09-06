@@ -1,5 +1,11 @@
 # README
 
+### Api:
+
+1. En la api utilizamos basic authentication, con las siguientes credenciales:
+
+       Username: alice
+       Password: abcd1234
 
 ### Link a producción: 
 
